@@ -33,3 +33,16 @@ buttons.forEach(button => {
         infoBox.style.display = 'block';
 });
 });
+
+function toggleProjects() {
+    const list = document.getElementById("projectList");
+    const button = document.querySelector("#Projects button");
+
+      if (list.style.display === "none") {
+        list.style.display = "block";
+        button.textContent = "Hide My Work";
+      } else {
+        list.style.display = "none";
+        button.textContent = "Show My Work";
+      }
+    }
