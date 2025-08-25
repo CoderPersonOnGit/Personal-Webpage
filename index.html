@@ -40,12 +40,22 @@
         <div id="skill-info"></div>
     </section>
 
+    <section id="Experiences">
+        <h2>Experiences</h2>
+        <div class="experience-buttons">
+            <button class="experience-btn" data-experience="higher_learning_oppertunities">Higher Learning</button>
+            <button class="experience-btn" data-experience="freelance">Freelance</button>
+            <button class="experience-btn" data-experience="volunteering">Volunteering</button>
+        </div>
+        <div id="experience-info"></div>
+    </section>
+
     <section id="Contacts">
         <h2>Reach Me</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <textarea placeholder="Your Message" required></textarea>
+        <form id="contact-form">
+            <input type="text" name="user_name" placeholder="Your Name" required />
+            <input type="email" name="user_email" placeholder="Your Email" required />
+            <textarea name="message" placeholder="Your Message" required></textarea>
             <button type="submit">Send</button>
         </form>
     </section>
@@ -53,6 +63,25 @@
     <footer>
         <p>vyma.2030@gmail.com | Vyan Malige | CoderPersonOnGit</p>
     </footer>
+
+        
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        emailjs.init("1ZQhku9K-mU6NYX5Q"); 
+
+        document.getElementById("contact-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+        emailjs.sendForm("service_9uxnplj", "template_4gajjdr", this)
+            .then(() => {
+            alert("Message sent successfully!");
+            }, (error) => {
+          alert("Oops! Something went wrong.");
+          console.error(error);
+        });
+    });
+  </script>
+  
 
     <script src="framework.js"></script>
 </body>

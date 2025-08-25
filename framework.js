@@ -46,3 +46,43 @@ function toggleProjects() {
         button.textContent = "Show My Work";
       }
     }
+
+const experienceButtons = document.querySelectorAll('.experience-btn');
+const experienceInfoBox = document.getElementById('experience-info');
+
+const experienceDetails = {
+  higher_learning_oppertunities: {
+    description: "Visited BARC, co-founder of FTC team 26251 Instantbot, 1st place in science fair, progressed to Thermo Fisher JIC",
+  },
+  freelance: {
+    description: "Built custom websites and apps for local problems and worked problem solving through code.",
+  },
+  volunteering: {
+    description: "Volunteered through gurukul non-profit organization for fostering indian culture. Furthermore, mentored FTC teams.",
+  }
+};
+
+experienceButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const experience = button.getAttribute('data-experience');
+    const { description } = experienceDetails[experience];
+    experienceInfoBox.innerHTML = `<p>${description}</p>`;
+    experienceInfoBox.style.display = 'block';
+  });
+});
+
+emailjs.init("1ZQhku9K-mU6NYX5Q"); 
+
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+  e.preventDefault(); 
+
+  emailjs.sendForm("service_9uxnplj", "template_4gajjdr", this)
+    .then(() => {
+      alert("Message sent successfully!");
+    }, (error) => {
+      alert("Oops! Something went wrong.");
+      console.error(error);
+    });
+});
+
+
