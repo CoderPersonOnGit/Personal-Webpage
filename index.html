@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <title>Vyan Malige</title>
+    <button id="theme-toggle">Dark Mode</button>
 </head>
 <body>
     <header>
@@ -88,6 +89,18 @@
           console.error(error);
         });
     });
+  </script>
+
+  <script>
+    const toggleBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+    toggleBtn.textContent = body.classList.contains("dark-mode")
+      ? "Light Mode"
+      : "Dark Mode";
+  });
   </script>
   
 
