@@ -59,6 +59,27 @@
         <div id="experience-info"></div>
     </section>
 
+    <section id="coding-streak">
+        <h2>My Coding Streak</h2>
+        <div class="streak-bar">
+            <div class="streak-fill" style="width: 0%;">13 Days</div>
+        </div>
+    </section>
+
+    <section id="activity-timeline">
+        <h2>Recent Development Activity</h2>
+        <ul class="timeline">
+            <li><span>Aug 2025</span> Built a file dashboard with GitHub integration</li>
+            <li><span>Jul 2025</span> Learned TypeScript and built a PWA</li>
+            <li><span>Jun 2025</span> Designed a responsive webpage template</li>
+        </ul>
+    </section>
+
+    <section id="github-activity">
+        <h2>My Github Contribution Activity</h2>
+        <iframe src="https://ghchart.rshah.org/CoderPersonOnGit" frameborder="0" style="width:100%; height:100px;"></iframe>
+    </section>
+
     <section id="Contacts">
         <h2>Reach Me</h2>
         <form id="contact-form">
@@ -101,6 +122,13 @@
       ? "Light Mode"
       : "Dark Mode";
   });
+  </script>
+
+  <script>
+    const streakDays = 13; 
+    const streakFill = document.querySelector(".streak-fill");
+    streakFill.style.width = `${Math.min(streakDays * 2, 100)}%`;
+    streakFill.textContent = `${streakDays} Days`;
   </script>
   
 
