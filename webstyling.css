@@ -353,6 +353,44 @@ textarea.dark-mode {
   margin-bottom: 0.5rem;
 }
 
+#Projects {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+#Projects h2 {
+  font-size: 28px;
+  margin-bottom: 1rem;
+  color: #4a90e2;
+}
+
+#projectList {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+#projectList li {
+  margin: 0.75rem 0;
+}
+
+#projectList li a {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+#projectList li a:hover {
+  color: #4a90e2;
+}
+
+
 
 
 
